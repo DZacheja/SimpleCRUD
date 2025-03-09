@@ -1,0 +1,40 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.12.35527.113 d17.12
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Radio.API", "RadioAPI\Radio.API.csproj", "{60E99137-D720-494D-AB31-1BE31EEAD268}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Radio.Application", "Radio.Application\Radio.Application.csproj", "{9264578E-D88B-4B7A-9207-FFC9725ACDCE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Radio.Domain", "Radio.Domain\Radio.Domain.csproj", "{ECDC6A4A-2E11-4B96-9573-EAB1DE11F8BE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Radio.Infrastructure", "Radio.Infrastructure\Radio.Infrastructure.csproj", "{4247C00B-CD64-4D31-A6E2-24306640F735}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{60E99137-D720-494D-AB31-1BE31EEAD268}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{60E99137-D720-494D-AB31-1BE31EEAD268}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{60E99137-D720-494D-AB31-1BE31EEAD268}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{60E99137-D720-494D-AB31-1BE31EEAD268}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9264578E-D88B-4B7A-9207-FFC9725ACDCE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9264578E-D88B-4B7A-9207-FFC9725ACDCE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9264578E-D88B-4B7A-9207-FFC9725ACDCE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9264578E-D88B-4B7A-9207-FFC9725ACDCE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{ECDC6A4A-2E11-4B96-9573-EAB1DE11F8BE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ECDC6A4A-2E11-4B96-9573-EAB1DE11F8BE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ECDC6A4A-2E11-4B96-9573-EAB1DE11F8BE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ECDC6A4A-2E11-4B96-9573-EAB1DE11F8BE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4247C00B-CD64-4D31-A6E2-24306640F735}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4247C00B-CD64-4D31-A6E2-24306640F735}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4247C00B-CD64-4D31-A6E2-24306640F735}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4247C00B-CD64-4D31-A6E2-24306640F735}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,14 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net9.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Radio.Domain\Radio.Domain.csproj" />
+    <ProjectReference Include="..\Radio.Infrastructure\Radio.Infrastructure.csproj" />
+  </ItemGroup>
+
+</Project>

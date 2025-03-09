@@ -1,0 +1,6 @@
+@RadioAPI_HostAddress = http://localhost:5037
+
+GET {{RadioAPI_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
