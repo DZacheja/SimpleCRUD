@@ -168,10 +168,10 @@ public class RadioProgramService : IRadioProgramService
 		{
 			var radioProgram = await _radioProgramRepository.GetByIdAsync(radioId);
 			if (radioProgram == null) throw new Exception("Invalid Program ID");
-			if (radioProgram.Musics.Any(m => m.Id == musicId)) throw new Exception("Music already added to Program");
+			if (radioProgram.Musics!.Any(m => m.Id == musicId)) throw new Exception("Music already added to Program");
 			var music = await _musicService.GetByIdAsync(musicId);
 			if (music == null) throw new Exception("Invalid Music ID");
-			radioProgram.Musics.Add(music);
+			radioProgram.Musics!.Add(music);
 			await _radioProgramRepository.UpdateAsync(radioProgram);
 			_logger.LogInformation($"Program with id:{radioProgram.Id} updated successfully");
 		}

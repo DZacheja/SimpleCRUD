@@ -69,7 +69,7 @@ public static class Seeder
 			radioProgram.ProgramDetails = programDetails[random.Next(0, programDetails.Count)];
 			radioProgram.ProgramDetailsId = radioProgram.ProgramDetails!.Id;
 			radioProgram.HostId = radioProgram.Host!.Id;
-			await radioProgramService.AddProgramAsync(radioProgram.Name, radioProgram.StartTime, radioProgram.HostId, radioProgram.ProgramDetailsId, radioProgram.Musics.Select(m => m.Id).ToArray());
+			await radioProgramService.AddProgramAsync(radioProgram.Name, radioProgram.StartTime, radioProgram.HostId, radioProgram.ProgramDetailsId, radioProgram.Musics!.Select(m => m.Id).ToArray());
 			programDetails.Remove(radioProgram.ProgramDetails);
 		}
 	}
