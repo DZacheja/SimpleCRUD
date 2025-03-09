@@ -1,14 +1,15 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
-  <PropertyGroup>
-    <TargetFramework>net9.0</TargetFramework>
-    <ImplicitUsings>enable</ImplicitUsings>
-    <Nullable>enable</Nullable>
-  </PropertyGroup>
+	<PropertyGroup>
+		<TargetFramework>net9.0</TargetFramework>
+		<ImplicitUsings>enable</ImplicitUsings>
+		<Nullable>enable</Nullable>
+		<RestorePackagesWithLockFile>true</RestorePackagesWithLockFile>
+	</PropertyGroup>
 
-  <ItemGroup>
-    <ProjectReference Include="..\Radio.Domain\Radio.Domain.csproj" />
-    <ProjectReference Include="..\Radio.Infrastructure\Radio.Infrastructure.csproj" />
-  </ItemGroup>
+	<ItemGroup>
+		<ProjectReference Include="..\Radio.Domain\Radio.Domain.csproj" />
+		<ProjectReference Include="..\Radio.Infrastructure\Radio.Infrastructure.csproj" />
+	</ItemGroup>
 
 </Project>
