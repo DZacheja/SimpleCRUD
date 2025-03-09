@@ -7,8 +7,8 @@ public class RadioProgram
 	public DateTime StartTime { get; set; }
 	public DateTime EndTime { get; set; }
 	public int HostId { get; set; }
-	public Host Host { get; set; } = null!;
+	public virtual Host? Host { get; set; }
 	public int ProgramDetailsId { get; set; }
 	public virtual ProgramDetails? ProgramDetails { get; set; }
-	public List<Music> Musics { get; set; } = null!;
+	public virtual List<Music>? Musics { get; set; }
 }

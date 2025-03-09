@@ -4,7 +4,6 @@ using Radio.Infrastructure.Presistence;
 using Radio.Infrastructure.Repositories.Interfaces;
 
 namespace Radio.Infrastructure.Repositories;
-
 public class RadioProgramRepository : IRadioProgramRepository
 {
 	private readonly RadioDbContext _context;
