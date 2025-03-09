@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.12.35527.113 d17.12
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Radio.API", "RadioAPI\Radio.API.csproj", "{60E99137-D720-494D-AB31-1BE31EEAD268}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Radio.API", "Radio.API\Radio.API.csproj", "{60E99137-D720-494D-AB31-1BE31EEAD268}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Radio.Application", "Radio.Application\Radio.Application.csproj", "{9264578E-D88B-4B7A-9207-FFC9725ACDCE}"
 EndProject
