@@ -53,7 +53,7 @@ public static class PostEnpointsExtension
 			operation.Summary = "Add Host";
 			return operation;
 		})
-		.Produces<Music>(StatusCodes.Status201Created);
+		.Produces<Host>(StatusCodes.Status201Created);
 
 		app.MapPost("/api/programdetails", async ([FromBody] CreateProgramDetailsRequest request, [FromServices] IGenericService<ProgramDetails> programDetailsService) =>
 		{
@@ -97,6 +97,6 @@ public static class PostEnpointsExtension
 			operation.Summary = "Add radio program";
 			return operation;
 		})
-		.Produces<ProgramDetails>(StatusCodes.Status201Created);
+		.Produces<RadioProgram>(StatusCodes.Status201Created);
 	}
 }

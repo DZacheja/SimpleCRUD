@@ -28,10 +28,10 @@ public static class PutEnpointsExtension
 		.WithOpenApi(operation =>
 		{
 			operation.Description = "Update radio program.";
-			operation.Summary = "Up[date radio program";
+			operation.Summary = "Update radio program";
 			return operation;
 		})
-		.Produces<ProgramDetails>(StatusCodes.Status201Created);
+		.Produces<RadioProgram>(StatusCodes.Status201Created);
 
 		app.MapPut("/api/radioprogram/addmusic", async ([FromBody] AddMusicToRadioProgramRequest request, [FromServices] IRadioProgramService radioProgramService) =>
 		{
@@ -52,6 +52,6 @@ public static class PutEnpointsExtension
 			operation.Summary = "Update radio program by adding new music";
 			return operation;
 		})
-		.Produces<ProgramDetails>(StatusCodes.Status201Created);
+		.Produces<RadioProgram>(StatusCodes.Status201Created);
 	}
 }

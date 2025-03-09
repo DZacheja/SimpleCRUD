@@ -30,8 +30,7 @@ public static class DeleteEnpointsExtension
 			operation.Description = "Delete music by given id";
 			operation.Summary = "Remove Music from database";
 			return operation;
-		})
-		.Produces<Music>(StatusCodes.Status200OK);
+		});
 
 		app.MapDelete("/api/hosts/{id:int}", async (int id, [FromServices] IGenericService<Host> hostService) =>
 		{
@@ -51,8 +50,7 @@ public static class DeleteEnpointsExtension
 			operation.Description = "Delete host by given id";
 			operation.Summary = "Remove Host from database";
 			return operation;
-		})
-		.Produces<Host>(StatusCodes.Status200OK);
+		});
 
 		app.MapDelete("/api/programdetails/{id:int}", async (int id, [FromServices] IGenericService<ProgramDetails> programDetailsService) =>
 		{
@@ -72,8 +70,7 @@ public static class DeleteEnpointsExtension
 			operation.Description = "Delete program details by given id";
 			operation.Summary = "Remove program details from database";
 			return operation;
-		})
-		.Produces<Host>(StatusCodes.Status200OK);
+		});
 
 		app.MapDelete("/api/radioprogram/{id:int}", async (int id, [FromServices] IRadioProgramService radioProgramService) =>
 		{
@@ -93,7 +90,6 @@ public static class DeleteEnpointsExtension
 			operation.Description = "Delete radio program by given id";
 			operation.Summary = "Remove radio program from database";
 			return operation;
-		})
-		.Produces<Host>(StatusCodes.Status200OK);
+		});
 	}
 }

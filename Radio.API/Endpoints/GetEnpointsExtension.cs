@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Hosting;
 using Radio.Application.Services.Interfaces;
 using Radio.Domain.Models;
 using Host = Radio.Domain.Models.Host;
@@ -38,7 +39,10 @@ public static class GetEnpointsExtension
 			try
 			{
 				var music = await musicService.GetByIdAsync(id);
-				return Results.Ok(music);
+				if (music != null)
+					return Results.Ok(music);
+				else
+					return Results.NotFound("Music with the given id not found.");
 			}
 			catch (Exception ex)
 			{
@@ -52,9 +56,10 @@ public static class GetEnpointsExtension
 			operation.Summary = "Music";
 			return operation;
 		})
-		.Produces<Music>(StatusCodes.Status200OK);
+		.Produces<Music>(StatusCodes.Status200OK)
+		.Produces(StatusCodes.Status404NotFound);
 
-		app.MapGet("/api/hosts", async ([FromServices] IGenericService<Radio.Domain.Models.Host> hostService) =>
+		app.MapGet("/api/hosts", async ([FromServices] IGenericService<Host> hostService) =>
 		{
 			try
 			{
@@ -73,14 +78,17 @@ public static class GetEnpointsExtension
 			operation.Summary = "Existing musics";
 			return operation;
 		})
-		.Produces<List<Music>>(StatusCodes.Status200OK);
+		.Produces<List<Host>>(StatusCodes.Status200OK);
 
 		app.MapGet("/api/hosts/{id:int}", async (int id, [FromServices] IGenericService<Host> hostService) =>
 		{
 			try
 			{
-				var music = await hostService.GetByIdAsync(id);
-				return Results.Ok(music);
+				var host = await hostService.GetByIdAsync(id);
+				if (host != null)
+					return Results.Ok(host);
+				else
+					return Results.NotFound("Host with the given id not found.");
 			}
 			catch (Exception ex)
 			{
@@ -94,7 +102,8 @@ public static class GetEnpointsExtension
 			operation.Summary = "Host";
 			return operation;
 		})
-		.Produces<Host>(StatusCodes.Status200OK);
+		.Produces<Host>(StatusCodes.Status200OK)
+		.Produces(StatusCodes.Status404NotFound);
 
 		app.MapGet("/api/programdetails", async ([FromServices] IGenericService<ProgramDetails> programDetailsService) =>
 		{
@@ -115,7 +124,7 @@ public static class GetEnpointsExtension
 			operation.Summary = "Existing program details";
 			return operation;
 		})
-		.Produces<List<Music>>(StatusCodes.Status200OK);
+		.Produces<List<ProgramDetails>>(StatusCodes.Status200OK);
 
 		app.MapGet("/api/radioprograms", async ([FromServices] IRadioProgramService radioProgramService) =>
 		{
@@ -143,7 +152,10 @@ public static class GetEnpointsExtension
 			try
 			{
 				var radio = await radioProgramService.GetProgramByIdAsync(id);
-				return Results.Ok(radio);
+				if (radio != null)
+					return Results.Ok(radio);
+				else
+					return Results.NotFound("Radio Program with the given id not found.");
 			}
 			catch (Exception ex)
 			{
@@ -157,6 +169,7 @@ public static class GetEnpointsExtension
 			operation.Summary = "Radio Program";
 			return operation;
 		})
-		.Produces<RadioProgram>(StatusCodes.Status200OK);
+		.Produces<RadioProgram>(StatusCodes.Status200OK)
+		.Produces(StatusCodes.Status404NotFound);
 	}
 }

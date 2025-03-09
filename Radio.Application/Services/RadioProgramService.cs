@@ -30,7 +30,15 @@ public class RadioProgramService : IRadioProgramService
 	{
 		try
 		{
-			return await _radioProgramRepository.GetAllAsync();
+			var results = await _radioProgramRepository.GetAllAsync();
+			//Clear references because of circular reference - it can be fixed using DTOs
+			foreach (var item in results)
+			{
+				item.Musics!.ForEach(x => x.RadioPrograms.Clear());
+				item.ProgramDetails!.RadioProgram = new RadioProgram();
+				item.Host!.Programs = new List<RadioProgram>();
+			}
+			return results;
 		}
 		catch (Exception ex)
 		{

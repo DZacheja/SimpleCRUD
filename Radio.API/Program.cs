@@ -39,7 +39,7 @@ builder.Services.AddScoped<IGenericService<Music>, GenericService<Music>>();
 
 builder.Services.ConfigureHttpJsonOptions(options =>
 {
-	options.SerializerOptions.ReferenceHandler = System.Text.Json.Serialization.ReferenceHandler.Preserve;
+	options.SerializerOptions.ReferenceHandler = System.Text.Json.Serialization.ReferenceHandler.IgnoreCycles;
 });
 
 var app = builder.Build();

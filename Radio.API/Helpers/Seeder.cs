@@ -60,16 +60,17 @@ public static class Seeder
 			.RuleFor(r => r.Name, f => f.Company.CatchPhrase())
 			.RuleFor(r => r.StartTime, f => DateTime.Now + new TimeSpan(f.Random.Int(0,999)))
 			.RuleFor(r => r.Host, f => f.PickRandom(hosts))
-			.RuleFor(r => r.Musics, f => f.PickRandom(musics, f.Random.Int(1, 5)).ToList())
-			.RuleFor(r => r.ProgramDetails, f => f.PickRandom(programDetails));
+			.RuleFor(r => r.Musics, f => f.PickRandom(musics, f.Random.Int(1, 5)).ToList());
 
 		var radioPrograms = radioProgramFaker.Generate(itemCount);
 		// Add radio programs to database
 		foreach (var radioProgram in radioPrograms)
 		{
+			radioProgram.ProgramDetails = programDetails[random.Next(0, programDetails.Count)];
 			radioProgram.ProgramDetailsId = radioProgram.ProgramDetails!.Id;
 			radioProgram.HostId = radioProgram.Host!.Id;
 			await radioProgramService.AddProgramAsync(radioProgram.Name, radioProgram.StartTime, radioProgram.HostId, radioProgram.ProgramDetailsId, radioProgram.Musics.Select(m => m.Id).ToArray());
+			programDetails.Remove(radioProgram.ProgramDetails);
 		}
 	}
 }

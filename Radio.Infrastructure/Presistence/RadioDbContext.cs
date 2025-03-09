@@ -24,10 +24,10 @@ public class RadioDbContext : DbContext
 			.HasForeignKey(rp => rp.HostId);
 
 		modelBuilder.Entity<RadioProgram>()
-				.HasOne(rp => rp.ProgramDetails)
-				.WithOne(pd => pd.RadioProgram)
-				.HasForeignKey<RadioProgram>(rp => rp.ProgramDetailsId)
-				.OnDelete(DeleteBehavior.Cascade);
+			.HasOne(rp => rp.ProgramDetails)
+			.WithOne(pd => pd.RadioProgram)
+			.HasForeignKey<RadioProgram>(rp => rp.ProgramDetailsId)
+			.OnDelete(DeleteBehavior.Cascade);
 
 		// Entity framerowk will create a join table for this many to many relationship
 		modelBuilder.Entity<RadioProgram>()
