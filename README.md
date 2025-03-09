@@ -53,8 +53,8 @@ https://localhost:5080/swagger
 - NLog: Popularna biblioteka do logowania w aplikacjach .NET. Umożliwia rejestrowanie zdarzeń, błędów i innych informacji diagnostycznych w różnych miejscach, takich jak pliki, bazy danych, konsola i wiele innych. NLog jest elastyczny i łatwy w konfiguracji, co czyni go jednym z najczęściej używanych narzędzi do logowania w ekosystemie .NET. Tutaj w celu prostoty został skonfigurowany na logowanie danych do konsoli (plik nlog.config).
 ## Możliwości rozbudowy
 - Doanie autoryzacji i autentykacji w celu ograniczenia możliwośći subskrypcji na dane zadrzenie
-- Dodanie wywoływania wielkowątkowego do Weebhook aby przyśpieszyć działanie aplikacji przy dużej ilości subskrypcji
 - Dodanie większego pokrycia logami
+- Dodanie DTO (np AutoMapper) i ograniczenie danych zwracanych w JSON w endpointach.
 - Dodanie konteneryzacji
 - Rozbudowa Pipeline o Continous Delivery
 ---
