@@ -34,9 +34,12 @@ public class RadioProgramService : IRadioProgramService
 			//Clear references because of circular reference - it can be fixed using DTOs
 			foreach (var item in results)
 			{
-				item.Musics!.ForEach(x => x.RadioPrograms.Clear());
-				item.ProgramDetails!.RadioProgram = new RadioProgram();
-				item.Host!.Programs = new List<RadioProgram>();
+				if(item.Musics != null)
+					item.Musics.ForEach(x => x.RadioPrograms.Clear());
+				if(item.ProgramDetails != null)
+					item.ProgramDetails.RadioProgram = new RadioProgram();
+				if(item.Host != null)
+					item.Host.Programs = new List<RadioProgram>();
 			}
 			return results;
 		}
